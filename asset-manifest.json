@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/poll-app-reactjs/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/poll-app-reactjs/static/js/main.cd928b59.chunk.js",
+    "main.js.map": "/poll-app-reactjs/static/js/main.cd928b59.chunk.js.map",
+    "runtime-main.js": "/poll-app-reactjs/static/js/runtime-main.5a172819.js",
+    "runtime-main.js.map": "/poll-app-reactjs/static/js/runtime-main.5a172819.js.map",
+    "static/css/2.de424728.chunk.css": "/poll-app-reactjs/static/css/2.de424728.chunk.css",
+    "static/js/2.dcca35c6.chunk.js": "/poll-app-reactjs/static/js/2.dcca35c6.chunk.js",
+    "static/js/2.dcca35c6.chunk.js.map": "/poll-app-reactjs/static/js/2.dcca35c6.chunk.js.map",
+    "index.html": "/poll-app-reactjs/index.html",
+    "precache-manifest.a265d4b637bae36f516161a491994f69.js": "/poll-app-reactjs/precache-manifest.a265d4b637bae36f516161a491994f69.js",
+    "service-worker.js": "/poll-app-reactjs/service-worker.js",
+    "static/css/2.de424728.chunk.css.map": "/poll-app-reactjs/static/css/2.de424728.chunk.css.map",
+    "static/css/main.5ecd60fb.chunk.css.map": "/poll-app-reactjs/static/css/main.5ecd60fb.chunk.css.map",
+    "static/js/2.dcca35c6.chunk.js.LICENSE.txt": "/poll-app-reactjs/static/js/2.dcca35c6.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5a172819.js",
+    "static/css/2.de424728.chunk.css",
+    "static/js/2.dcca35c6.chunk.js",
+    "static/css/main.5ecd60fb.chunk.css",
+    "static/js/main.cd928b59.chunk.js"
+  ]
+}
