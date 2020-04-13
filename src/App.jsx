@@ -27,11 +27,10 @@ class App extends React.Component {
       // polls: [... this.state.polls, poll]
       polls: this.state.polls.concat(poll), // same as previous line
     });
-    console.log(poll);
   };
 
   updatePoll = (updatedPoll) => {
-    console.log(updatedPoll.id)
+    console.log('update poll ')
     const polls = [...this.state.polls];
     const poll = polls.find((p) => p.id === updatedPoll.id);
 
@@ -49,6 +48,7 @@ class App extends React.Component {
 
   selectPoll = (pollId) => {
     const poll = this.state.polls.find((p) => p.id === pollId);
+    console.log('select poll - ', pollId)
     this.setState({ selectedPoll: poll });
   };
 
