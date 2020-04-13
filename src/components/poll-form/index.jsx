@@ -59,7 +59,8 @@ class PollForm extends React.Component {
     event.preventDefault();
 
     const { isValid, errors } = this.validate();
-    if (!isValid) {
+    console.log('isvalid - ', isValid)
+    if (isValid) {
       const { title, description, options } = this.state;
       this.props.submit({ title, description, options });
 
@@ -109,7 +110,7 @@ class PollForm extends React.Component {
 
     return {
       errors,
-      inValid: Object.keys(errors).length === 0,
+      isValid: Object.keys(errors).length === 0,
     };
   };
 

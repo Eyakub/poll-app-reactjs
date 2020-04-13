@@ -6,7 +6,6 @@ import POLLS from "./data/polls";
 import shortid from "shortid";
 
 class App extends React.Component {
-
   state = {
     polls: [],
     selectedPoll: {},
@@ -28,10 +27,11 @@ class App extends React.Component {
       // polls: [... this.state.polls, poll]
       polls: this.state.polls.concat(poll), // same as previous line
     });
-    console.log(poll)
+    console.log(poll);
   };
 
   updatePoll = (updatedPoll) => {
+    console.log(updatedPoll.id)
     const polls = [...this.state.polls];
     const poll = polls.find((p) => p.id === updatedPoll.id);
 
@@ -44,12 +44,30 @@ class App extends React.Component {
 
   deletePoll = (pollId) => {
     const polls = this.state.polls.filter((p) => p.id !== pollId);
-    this.setState({ polls, selectPoll: {} });
+    this.setState({ polls, selectedPoll: {} });
   };
 
   selectPoll = (pollId) => {
     const poll = this.state.polls.find((p) => p.id === pollId);
-    this.setState({ selectPoll: poll });
+    this.setState({ selectedPoll: poll });
+  };
+
+  getOpinion = (response) => {
+    const { polls } = this.state;
+    const poll = polls.find((p) => p.id === response.pollId);
+    const option = poll.options.find((o) => o.id === response.selectedOption);
+
+    poll.totalVote++;
+    option.vote++;
+
+    const opinion = {
+      id: shortid.generate(),
+      name: response.name,
+      selectedOption: response.selectedOption,
+    };
+
+    poll.opinions.push(opinion);
+    this.setState({ polls });
   };
 
   handleSearch = (searchTerm) => {};
@@ -69,7 +87,12 @@ class App extends React.Component {
           </Col>
 
           <Col md={8}>
-            <MainContent />
+            <MainContent
+              poll={this.state.selectedPoll}
+              getOpinion={this.getOpinion}
+              updatePoll={this.updatePoll}
+              deletePoll={this.deletePoll}
+            />
           </Col>
         </Row>
       </Container>
