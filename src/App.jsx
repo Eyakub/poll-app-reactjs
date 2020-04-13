@@ -30,7 +30,7 @@ class App extends React.Component {
   };
 
   updatePoll = (updatedPoll) => {
-    console.log('update poll ')
+    console.log("update poll ");
     const polls = [...this.state.polls];
     const poll = polls.find((p) => p.id === updatedPoll.id);
 
@@ -48,7 +48,7 @@ class App extends React.Component {
 
   selectPoll = (pollId) => {
     const poll = this.state.polls.find((p) => p.id === pollId);
-    console.log('select poll - ', pollId)
+    console.log("select poll - ", pollId);
     this.setState({ selectedPoll: poll });
   };
 
@@ -70,15 +70,27 @@ class App extends React.Component {
     this.setState({ polls });
   };
 
-  handleSearch = (searchTerm) => {};
+  handleSearch = (searchTerm) => {
+    this.setState({
+      searchTerm,
+    });
+  };
+
+  performSearch = () => {
+    return this.state.polls.filter((poll) =>
+      poll.title.toLowerCase().includes(this.state.searchTerm.toLowerCase())
+    );
+  };
 
   render() {
+    const polls = this.performSearch()
+    console.log(this.state)
     return (
       <Container className="my-5">
         <Row>
           <Col md={4}>
             <Sidebar
-              polls={this.state.polls}
+              polls={polls}
               searchTerm={this.state.searchTerm}
               handleSearch={this.handleSearch}
               selectPoll={this.selectPoll}
