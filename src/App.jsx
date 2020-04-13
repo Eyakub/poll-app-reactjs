@@ -6,6 +6,7 @@ import POLLS from "./data/polls";
 import shortid from "shortid";
 
 class App extends React.Component {
+
   state = {
     polls: [],
     selectedPoll: {},
@@ -27,6 +28,7 @@ class App extends React.Component {
       // polls: [... this.state.polls, poll]
       polls: this.state.polls.concat(poll), // same as previous line
     });
+    console.log(poll)
   };
 
   updatePoll = (updatedPoll) => {
@@ -62,6 +64,7 @@ class App extends React.Component {
               searchTerm={this.state.searchTerm}
               handleSearch={this.handleSearch}
               selectPoll={this.selectPoll}
+              addNewPoll={this.addNewPoll}
             />
           </Col>
 
